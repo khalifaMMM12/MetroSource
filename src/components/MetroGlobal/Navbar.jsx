@@ -35,7 +35,7 @@ const Navbar = () => {
       w={"full"}
       justifyContent={"space-between"}
       alignItems={"center"}
-      paddingY={{ smDown: 10, smToMd: 10, mdTo2xl: 5 }}
+      paddingY={{ smDown: 7, smToMd: 7, mdTo2xl: 5 }}
       paddingX={10}
       bg={"#f4f4f4"}>
       <Link to={"/"}>
@@ -48,7 +48,7 @@ const Navbar = () => {
         alignItems={"center"}
         pos={{ smDown: "fixed", smToLg: "fixed", xlTo2xl: "unset" }}
         gap={5}
-        top={20}
+        top={"4.2rem"}
         transition={"0.2s all ease-in"}
         transform={{
           smDown: active ? "translateX(0rem)" : "translateX(100rem)",
