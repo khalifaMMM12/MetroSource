@@ -207,7 +207,7 @@ const AboutUs = () => {
               key={team.id}
               position={"relative"}
               w={"100%"}
-              height={{ smDown: "70vh", smToLg: "70vh", lgTo2xl: "70vh" }}>
+              height={{ smDown: "65vh", smToLg: "65vh", lgTo2xl: "70vh" }}>
               <Image
                 src={team.img}
                 width={"100%"}
