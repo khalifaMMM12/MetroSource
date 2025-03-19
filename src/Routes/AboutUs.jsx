@@ -200,7 +200,7 @@ const AboutUs = () => {
           </Text>
         </Flex>
         <SimpleGrid
-          columns={{ base: 1, smOnly: 1, mdOnly: 2, lgOnly: 2, xlTo2xl: 4 }}
+          columns={{ base: 1, smOnly: 1, mdOnly: 2, lgToXl: 2, xlTo2xl: 4 }}
           gap='10px'>
           {teams.map((team) => (
             <Box
