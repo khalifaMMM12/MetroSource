@@ -58,7 +58,7 @@ const AboutUs = () => {
         height={"100%"}
         py={4}
         gap={10}
-        px={10}
+        px={{ smDown: 4, smToMd: 4, mdTo2xl: 10 }}
         flexDirection={{
           smDown: "column",
           smToXl: "column",
@@ -167,7 +167,10 @@ const AboutUs = () => {
         fit={"cover"}
       />
 
-      <Flex width={"100%"} height={"100vh"} p={4}>
+      <Flex
+        width={"100%"}
+        height={"100vh"}
+        p={{ smDown: 2, smToMd: 2, mdTo2xl: 4 }}>
         <Image
           src={CEO}
           rounded={"2xl"}
@@ -177,7 +180,11 @@ const AboutUs = () => {
         />
       </Flex>
 
-      <Flex width={"100%"} flexDirection={"column"} px={10} py={8}>
+      <Flex
+        width={"100%"}
+        flexDirection={"column"}
+        px={{ smDown: 2, smToMd: 2, mdTo2xl: 10 }}
+        py={8}>
         <Flex
           flexDirection={"column"}
           alignItems={"center"}
