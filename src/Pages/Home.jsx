@@ -34,8 +34,8 @@ const Home = () => {
           <Flex
             w={"full"}
             height={{
-              smDown: "80vh",
-              smToMd: "80vh",
+              smDown: "60vh",
+              smToMd: "60vh",
               MdTo2xl: "full",
             }}
             className='embla__container'>
