@@ -32,7 +32,11 @@ export default function Mission() {
           pos={"relative"}
           flexDirection={"column"}
           alignItems={"center"}
-          w={["80%", "70%", "40%"]}
+          w={{
+            smDown: "95%",
+            smToMd: "95%",
+            mdTo2xl: "40%",
+          }}
           h={["50vh", "50vh", "100%"]}>
           <Image src={item.img} w={"100%"} h={"100%"} fit={"contain"} />
           <Flex

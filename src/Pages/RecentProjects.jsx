@@ -23,7 +23,11 @@ const RecentProjects = () => {
         alignItems={"center"}
         gap={4}
         py={8}
-        px={["1rem", "1rem", "10rem", "20rem"]}>
+        px={{
+          smDown: 2,
+          smToMd: 4,
+          mdTo2xl: "20rem",
+        }}>
         <Text
           color={"#121212"}
           textAlign={"center"}
@@ -33,7 +37,11 @@ const RecentProjects = () => {
         </Text>
         <Text
           color={"#121212"}
-          fontSize={16}
+          fontSize={{
+            smDown: 13,
+            smToMd: 13,
+            mdTo2xl: 16,
+          }}
           fontWeight={"normal"}
           textAlign={"center"}>
           Metrosource LTD provides top-tier, all-encompassing services in the
@@ -56,7 +64,11 @@ const RecentProjects = () => {
           smToLg: "fit-content",
           lgTo2xl: "150vh",
         }}
-        px={10}
+        px={{
+          smDown: 3,
+          smToMd: 3,
+          mdTo2xl: 10,
+        }}
         py={5}
         templateRows='repeat(4, minmax(0, 1fr))'
         templateColumns={{

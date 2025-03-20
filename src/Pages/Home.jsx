@@ -27,7 +27,11 @@ const Home = () => {
         smToLg: "100vh",
         lgTo2xl: 780,
       }}
-      p={4}
+      p={{
+        smDown: 2,
+        smToMd: 2,
+        mdTo2xl: 4,
+      }}
       bg={"#f4f4f4"}>
       <Box className='embla' rounded={"2xl"} bg={"#fafafa"}>
         <Box className='embla__viewport' rounded={"2xl"} ref={emblaRef}>

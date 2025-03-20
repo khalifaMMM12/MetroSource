@@ -38,9 +38,17 @@ const Services = () => {
       <Flex
         flexDirection={"column"}
         alignItems={"center"}
-        gap={4}
+        gap={{
+          smDown: 2,
+          smToMd: 2,
+          mdTo2xl: 4,
+        }}
         py={8}
-        px={["1rem", "1rem", "10rem", "20rem"]}>
+        px={{
+          smDown: 2,
+          smToMd: 4,
+          mdTo2xl: "20rem",
+        }}>
         <Text
           color={"#121212"}
           textAlign={"center"}
@@ -50,7 +58,11 @@ const Services = () => {
         </Text>
         <Text
           color={"#121212"}
-          fontSize={16}
+          fontSize={{
+            smDown: 13,
+            smToMd: 13,
+            mdTo2xl: 16,
+          }}
           fontWeight={"normal"}
           textAlign={"center"}>
           Metrosource LTD operates with the highest standards of
@@ -61,7 +73,11 @@ const Services = () => {
 
       <Flex
         width={"100%"}
-        px={5}
+        px={{
+          smDown: 2,
+          smToMd: 2,
+          mdTo2xl: 5,
+        }}
         gap={5}
         flexWrap={"wrap"}
         justifyContent={"center"}

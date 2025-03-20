@@ -170,6 +170,7 @@ const AboutUs = () => {
       <Flex
         width={"100%"}
         height={"100vh"}
+        position={"relative"}
         p={{ smDown: 2, smToMd: 2, mdTo2xl: 4 }}>
         <Image
           src={CEO}
@@ -178,6 +179,53 @@ const AboutUs = () => {
           height={"100%"}
           fit={"cover"}
         />
+        <Flex
+          flexDirection={"column"}
+          gap={4}
+          width={{
+            smDown: "90%",
+            smToMd: "90%",
+            mdTo2xl: "35%",
+          }}
+          height={"fit-content"}
+          bg={"#ffffff"}
+          position={"absolute"}
+          bottom={2}
+          left={0}
+          p={6}
+          rounded={"2xl"}>
+          <Text
+            color={"#121212"}
+            fontSize={{
+              smDown: 15,
+              smToMd: 15,
+              mdTo2xl: 20,
+            }}
+            fontWeight={"medium"}>
+            "WE ARE SHARPENING OUR STRATEGY TO <br /> BE ONE OF THE WORLD'S MOST
+            VALUABLE,
+            <br /> MOST INNOVATIVE AND MOST ADMIRED COMPANIES"
+          </Text>
+          <Text
+            color={"#9D9D9C"}
+            fontWeight={"500"}
+            fontSize={{
+              smDown: 12,
+              smToMd: 12,
+              mdTo2xl: 14,
+            }}>
+            FOUNDER | Abdullah Bello Shuaibu
+          </Text>
+          <Button
+            width={"fit-content"}
+            bg={"#EF7826"}
+            px={4}
+            fontWeight={"light"}
+            color={"#ffffff"}
+            rounded={"3xl"}>
+            Read Founder’s Letter
+          </Button>
+        </Flex>
       </Flex>
 
       <Flex

@@ -7,7 +7,14 @@ const ClientPage = () => {
   const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
 
   return (
-    <Flex w={"full"} bg={"#f4f4f4"} p={4}>
+    <Flex
+      w={"full"}
+      bg={"#f4f4f4"}
+      p={{
+        smDown: 2,
+        smToMd: 2,
+        mdTo2xl: 4,
+      }}>
       <Flex
         w={"full"}
         height={"full"}
@@ -15,7 +22,11 @@ const ClientPage = () => {
         flexDirection={"column"}
         gap={10}
         bg={"#121212"}
-        p={4}
+        p={{
+          smDown: 2,
+          smToMd: 2,
+          mdTo2xl: 4,
+        }}
         rounded={"2xl"}>
         <Flex w={"full"} justifyContent={"flex-start"} alignItems={"center"}>
           <Text
