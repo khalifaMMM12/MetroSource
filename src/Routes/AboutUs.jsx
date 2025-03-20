@@ -183,8 +183,8 @@ const AboutUs = () => {
           flexDirection={"column"}
           gap={4}
           width={{
-            smDown: "90%",
-            smToMd: "90%",
+            smDown: "95%",
+            smToMd: "95%",
             mdTo2xl: "35%",
           }}
           height={"fit-content"}
