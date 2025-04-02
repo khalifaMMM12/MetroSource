@@ -23,7 +23,11 @@ const Projects = () => {
           smToLg: "fit-content",
           lgTo2xl: "150vh",
         }}
-        px={10}
+        px={{
+          smDown: 3,
+          smToMd: 3,
+          mdTo2xl: 10,
+        }}
         py={5}
         templateRows='repeat(4, minmax(0, 1fr))'
         templateColumns={{

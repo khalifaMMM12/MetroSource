@@ -72,15 +72,6 @@ const AboutUs = () => {
             Meet Metrosource
           </Text>
           <Box w={"full"}>
-            <Button
-              bg={"transparent"}
-              fontWeight={"normal"}
-              border={"1px #121212 solid"}
-              px={10}
-              fontSize={18}
-              rounded={"3xl"}>
-              Our Story
-            </Button>
             <Text
               fontWeight={"normal"}
               mb={3}
@@ -185,13 +176,14 @@ const AboutUs = () => {
           width={{
             smDown: "100%",
             smToMd: "100%",
-            mdTo2xl: "35%",
+            mdToLg: "55%",
+            xlTo2xl: "35%",
           }}
           height={"fit-content"}
           bg={"#ffffff"}
           position={"absolute"}
           bottom={2}
-          left={0}
+          left={{ base: 0, sm: 0, mdTo2xl: 4 }}
           p={6}
           rounded={"2xl"}>
           <Text
@@ -231,14 +223,14 @@ const AboutUs = () => {
       <Flex
         width={"100%"}
         flexDirection={"column"}
-        px={{ smDown: 2, smToMd: 2, mdTo2xl: 10 }}
+        px={{ smDown: 2, smToMd: 2, mdToLg: 2, lgTo2xl: 10 }}
         py={8}>
         <Flex
           flexDirection={"column"}
           alignItems={"center"}
           gap={4}
           py={8}
-          px={["1rem", "1rem", "10rem", "20rem"]}>
+          px={{ smDown: 2, smToMd: 2, mdToLg: 2, lgTo2xl: "20rem" }}>
           <Text
             color={"#121212"}
             textAlign={"center"}
@@ -255,19 +247,28 @@ const AboutUs = () => {
           </Text>
         </Flex>
         <SimpleGrid
-          columns={{ base: 1, smOnly: 1, mdOnly: 2, lgToXl: 2, xlTo2xl: 4 }}
+          columns={{ smOnly: 1, smToMd: 1, mdToLg: 4, lgTo2xl: 4 }}
           gap='10px'>
           {teams.map((team) => (
             <Box
               key={team.id}
               position={"relative"}
               w={"100%"}
-              height={{ smDown: "65vh", smToLg: "65vh", lgTo2xl: "70vh" }}>
+              height={{
+                smDown: "65vh",
+                smToMd: "65vh",
+                mdToLg: "75vh",
+                lgTo2xl: "70vh",
+              }}>
               <Image
                 src={team.img}
                 width={"100%"}
                 height={"100%"}
-                fit={{ smDown: "cover", smToMd: "cover", MdTo2xl: "cover" }}
+                fit={{
+                  smDown: "cover",
+                  smToLg: "cover",
+                  lgTo2xl: "cover",
+                }}
                 rounded={"2xl"}
               />
               <Flex
