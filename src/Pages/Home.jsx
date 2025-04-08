@@ -1,7 +1,8 @@
 import { Box, Button, Flex, Image } from "@chakra-ui/react";
 import metroHome from "@/assets/metroHome.jpg";
-import metroHome2 from "@/assets/slide2.png";
-import metroHome3 from "@/assets/slide3.png";
+import metroHome3 from "@/assets/slide3.jpeg";
+import mad1 from "@/assets/mad1.jpg";
+
 import { useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
@@ -43,11 +44,7 @@ const Home = () => {
               MdTo2xl: "full",
             }}
             className='embla__container'>
-            <Box
-              bg={"black"}
-              className='embla__slide'
-              w={"full"}
-              rounded={"2xl"}>
+            <Box className='embla__slide' w={"full"} rounded={"2xl"}>
               <Image
                 src={metroHome}
                 loading='lazy'
@@ -56,17 +53,17 @@ const Home = () => {
                 height={"100%"}
               />
             </Box>
-            <Box bg={"blue"} className='embla__slide'>
+            <Box className='embla__slide'>
               <Image
-                src={metroHome2}
+                src={mad1}
                 loading='lazy'
                 rounded={"2xl"}
-                fit={"contain"}
+                fit={"cover"}
                 w={"full"}
                 height={"100%"}
               />
             </Box>
-            <Box bg={"green"} className='embla__slide'>
+            <Box className='embla__slide'>
               <Image
                 src={metroHome3}
                 loading='lazy'

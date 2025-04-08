@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import HeroIntro from "@/components/MetroGlobal/HeroIntro";
 import { Box, Button, Flex, Image, SimpleGrid, Text } from "@chakra-ui/react";
-import About from "@/assets/About.png";
+import About from "@/assets/About.jpeg";
 import Navbar from "@/components/MetroGlobal/Navbar";
 
 import CoreValue2 from "@/assets/CoreValue1.png";
