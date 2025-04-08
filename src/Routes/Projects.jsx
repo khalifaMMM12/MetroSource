@@ -13,30 +13,39 @@ import build from "@/assets/build2.jpeg";
 import Footer from "@/components/MetroGlobal/Footer";
 import { Carousel } from "@mantine/carousel";
 import "@mantine/carousel/styles.css";
-import fm1 from "@/assets/fm1.jpg";
-import fm2 from "@/assets/fm1a.jpg";
-import fm3 from "@/assets/fm2.jpg";
-import fm4 from "@/assets/fm3.jpg";
-import fm5 from "@/assets/fm4.jpg";
-import jaha1 from "@/assets/jaha1.jpg";
-import jaha2 from "@/assets/jaha2.jpg";
-import jaha3 from "@/assets/jaha3.jpg";
-import jaha4 from "@/assets/jaha4.jpg";
-import jaha5 from "@/assets/jaha5.jpg";
-import jaha6 from "@/assets/jaha6.jpg";
-import mad1 from "@/assets/mad1.jpg";
-import mad2 from "@/assets/mad2.jpg";
-import mad3 from "@/assets/mad3.jpg";
-import mad4 from "@/assets/mad4.jpg";
-import mad5 from "@/assets/mad5.jpg";
-import mad6 from "@/assets/mad6.jpg";
-import mad7 from "@/assets/mad7.jpg";
+import fm1 from "@/assets/fmc1.png";
+import fm2 from "@/assets/fmc2.jpg";
+import fm3 from "@/assets/fmc3.jpg";
+import fm4 from "@/assets/fmc4.jpg";
+import fm5 from "@/assets/fmc5.jpg";
+import fm6 from "@/assets/fmc6.jpg";
+
+import jaha1 from "@/assets/jahi1.jpg";
+import jaha2 from "@/assets/jahi2.jpg";
+import jaha3 from "@/assets/jahi3.jpg";
+import jaha4 from "@/assets/jahi4.jpg";
+import jaha5 from "@/assets/jahi5.jpg";
+import jaha6 from "@/assets/jahi6.jpg";
+import jaha7 from "@/assets/jahi7.jpg";
+import jaha8 from "@/assets/jahi8.jpg";
+import mad1 from "@/assets/DBN1.jpg";
+import mad2 from "@/assets/DBN01.png";
+import mad3 from "@/assets/01.png";
+import mad4 from "@/assets/02.png";
+import mad6 from "@/assets/04.png";
+import mad7 from "@/assets/05.png";
+import niss1 from "@/assets/niss1.png";
+import niss2 from "@/assets/niss2.jpg";
+import niss3 from "@/assets/niss3.png";
+import niss4 from "@/assets/niss4.jpg";
+import niss5 from "@/assets/niss5.jpg";
+
 const Projects = () => {
   const projectOffer = [
     {
       id: 1,
       img: jaha5,
-      title: "Jada Country Home",
+      title: "Jahi",
 
       gallery: [
         {
@@ -62,6 +71,14 @@ const Projects = () => {
         {
           id: 6,
           img: jaha1,
+        },
+        {
+          id: 7,
+          img: jaha7,
+        },
+        {
+          id: 8,
+          img: jaha8,
         },
       ],
     },
@@ -91,12 +108,16 @@ const Projects = () => {
           id: 5,
           img: fm5,
         },
+        {
+          id: 6,
+          img: fm6,
+        },
       ],
     },
     {
       id: 3,
-      img: mad7,
-      title: "Madugu Residence",
+      img: mad2,
+      title: "DBN Project",
 
       gallery: [
         {
@@ -107,10 +128,7 @@ const Projects = () => {
           id: 2,
           img: mad3,
         },
-        {
-          id: 3,
-          img: mad5,
-        },
+
         {
           id: 4,
           img: mad2,
@@ -126,6 +144,35 @@ const Projects = () => {
         {
           id: 7,
           img: mad7,
+        },
+      ],
+    },
+    {
+      id: 4,
+      img: niss2,
+      title: "Nisa International Medical Center",
+
+      gallery: [
+        {
+          id: 1,
+          img: niss1,
+        },
+        {
+          id: 2,
+          img: niss2,
+        },
+
+        {
+          id: 3,
+          img: niss3,
+        },
+        {
+          id: 4,
+          img: niss4,
+        },
+        {
+          id: 5,
+          img: niss5,
         },
       ],
     },

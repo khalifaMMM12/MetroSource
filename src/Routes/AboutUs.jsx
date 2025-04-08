@@ -154,8 +154,8 @@ const AboutUs = () => {
       <Image
         src={CoreValue2}
         w={"100%"}
+        fit={["contain", "contain", "cover", "cover"]}
         height={{ smDown: "55vh", smToLg: "55vh", lgTo2xl: "150vh" }}
-        fit={"cover"}
       />
 
       <Flex

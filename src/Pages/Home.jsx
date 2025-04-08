@@ -24,8 +24,8 @@ const Home = () => {
       flexDirection={"column"}
       w={"full"}
       height={{
-        smDown: "100vh",
-        smToLg: "100vh",
+        smDown: "100%",
+        smToLg: "100%",
         lgTo2xl: 780,
       }}
       p={{
@@ -34,20 +34,29 @@ const Home = () => {
         mdTo2xl: 4,
       }}
       bg={"#f4f4f4"}>
-      <Box className='embla' rounded={"2xl"} bg={"#fafafa"}>
+      <Box
+        className='embla'
+        height={{
+          smDown: "100%",
+          smToMd: "100%",
+          mdTo2xl: "85vh",
+        }}
+        rounded={"2xl"}
+        bg={"#fafafa"}>
         <Box className='embla__viewport' rounded={"2xl"} ref={emblaRef}>
           <Flex
             w={"full"}
             height={{
               smDown: "60vh",
               smToMd: "60vh",
-              MdTo2xl: "full",
+              MdTo2xl: "60vh",
             }}
             className='embla__container'>
             <Box className='embla__slide' w={"full"} rounded={"2xl"}>
               <Image
                 src={metroHome}
                 loading='lazy'
+                fit={"cover"}
                 rounded={"2xl"}
                 w={"full"}
                 height={"100%"}
@@ -67,6 +76,7 @@ const Home = () => {
               <Image
                 src={metroHome3}
                 loading='lazy'
+                fit={"cover"}
                 rounded={"2xl"}
                 w={"full"}
                 height={"100%"}
