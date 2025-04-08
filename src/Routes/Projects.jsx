@@ -34,9 +34,9 @@ import mad3 from "@/assets/01.png";
 import mad4 from "@/assets/02.png";
 import mad6 from "@/assets/04.png";
 import mad7 from "@/assets/05.png";
-import niss1 from "@/assets/niss1.png";
+import niss1 from "@/assets/niss1.jpeg";
 import niss2 from "@/assets/niss2.jpg";
-import niss3 from "@/assets/niss3.png";
+import niss3 from "@/assets/niss3.jpeg";
 import niss4 from "@/assets/niss4.jpg";
 import niss5 from "@/assets/niss5.jpg";
 

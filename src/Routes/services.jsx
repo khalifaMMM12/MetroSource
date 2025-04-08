@@ -66,14 +66,17 @@ const Services = () => {
               justifyContent={"flex-start"}
               alignItems={"center"}>
               <Image
-                width={"50%"}
-                objectFit={"cover"}
-                src={{
-                  smDown: item.img2,
-                  smToLg: item.img2,
-                  lgTo2xl: item.img,
+                width={{
+                  smDown: "100%",
+                  smToLg: "100%",
                 }}
-                height={"100%"}
+                objectFit={"cover"}
+                src={item.img2}
+                height={{
+                  smDown: "100%",
+                  smToLg: "100%",
+                  lgTo2xl: "37vh",
+                }}
                 alt={item.title}
               />
               <Flex direction='column' gap={2} p={2}>

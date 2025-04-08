@@ -1,6 +1,7 @@
 import { Flex, Image, List, SimpleGrid, Text } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
-import Logo2 from "@/assets/logo2.svg";
+import Logo from "@/assets/logo.svg";
+
 import Metro from "@/assets/metro.png";
 
 import { FaFacebook, FaInstagram, FaLinkedinIn } from "react-icons/fa";
@@ -46,7 +47,7 @@ const Footer = () => {
       bg={"#121212"}
       pos={"relative"}>
       <Flex p={4}>
-        <Image src={Logo2} />
+        <Image src={Logo} />
       </Flex>
       <SimpleGrid columns={[1, 1, 3, 3, 3]} gap={10} p={4}>
         <Flex flexDirection={"column"} gap={4}>
