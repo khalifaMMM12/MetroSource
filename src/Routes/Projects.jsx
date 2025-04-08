@@ -37,7 +37,7 @@ const Projects = () => {
       id: 1,
       img: jaha5,
       title: "Jada Country Home",
-      subTitle: "Description of Project 1",
+
       gallery: [
         {
           id: 1,
@@ -69,7 +69,7 @@ const Projects = () => {
       id: 2,
       img: fm2,
       title: "FMC Project",
-      subTitle: "Description of Project 2",
+
       gallery: [
         {
           id: 1,
@@ -97,7 +97,7 @@ const Projects = () => {
       id: 3,
       img: mad7,
       title: "Madugu Residence",
-      subTitle: "Description of Project 3",
+
       gallery: [
         {
           id: 1,
