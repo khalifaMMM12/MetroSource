@@ -14,21 +14,21 @@ const Services = () => {
   const serviceOffer = [
     {
       id: 1,
-      icon: <FaHelmetSafety size={24} color='#121212' />,
-      img: service2,
-      img2: service2a,
-      title: "Engineering Services",
-      subTitle:
-        "Our skilled engineers provide diverse services, prioritizing quality construction with specialized solutions. Using renowned ‘Green technology,’ we ensure safe, efficient, and cost-effective outcomes.",
-    },
-    {
-      id: 2,
       icon: <FaPencilRuler size={24} color='#121212' />,
       img: service3,
       img2: service3a,
       title: "Architectural and engineering consultancy services",
       subTitle:
         "We specialize in providing innovative and high-quality architectural designs for your construction projects. Our team of experienced architects and designers are dedicated to delivering exceptional services that meet and exceed our clients expectations.",
+    },
+    {
+      id: 2,
+      icon: <FaHelmetSafety size={24} color='#121212' />,
+      img: service2,
+      img2: service2a,
+      title: "Engineering Services",
+      subTitle:
+        "Our skilled engineers provide diverse services, prioritizing quality construction with specialized solutions. Using renowned ‘Green technology,’ we ensure safe, efficient, and cost-effective outcomes.",
     },
   ];
   return (

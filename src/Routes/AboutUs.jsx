@@ -16,32 +16,26 @@ const AboutUs = () => {
     {
       id: 1,
       img: ab1,
-      name: "Abdullah Bello Shuaibu",
-      role: "President/Chief Executive Officer",
-      degree: "M.Sc. (Architecture), MBA, MNIA, Member, ARCON",
+      name: "Arc Abdullahi Bello Shu’aibu",
+      role: "MD/CEO",
     },
     {
       id: 2,
       img: ab2,
-      name: "Abdullah Bello Shuaibu",
-      role: "President/Chief Executive Officer",
-      degree: "M.Sc. (Architecture), MBA, MNIA, Member, ARCON",
+      name: "Arc Kayode Oyawoye",
+      role: "EXECUTIVE PARTNER",
     },
     {
       id: 3,
       img: ab3,
-
-      name: "Abdullah Bello Shuaibu",
-      role: "President/Chief Executive Officer",
-      degree: "M.Sc. (Architecture), MBA, MNIA, Member, ARCON",
+      name: "Arc Jibrilla Sahabo",
+      role: "HEAD OF STUDIO",
     },
     {
       id: 4,
       img: ab4,
-
-      name: "Abdullah Bello Shuaibu",
-      role: "President/Chief Executive Officer",
-      degree: "M.Sc. (Architecture), MBA, MNIA, Member, ARCON",
+      name: "Asma’u Abubakar",
+      role: "ACCOUNTANT",
     },
   ];
   return (
@@ -284,11 +278,8 @@ const AboutUs = () => {
                 <Text fontSize={{ smToLg: 13, lgTo2xl: 18 }} color={"#121212"}>
                   {team.name}
                 </Text>
-                <Text fontSize={13} color={"#12121250"}>
+                <Text fontSize={13} fontWeight={700} color={"#121212"}>
                   {team.role}
-                </Text>
-                <Text fontSize={11} color={"#121212"}>
-                  {team.degree}
                 </Text>
               </Flex>
             </Box>
