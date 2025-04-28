@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { lazy, Suspense } from "react";
-import Loader from "./components/MetroGlobal/Loader";
+import Layout from "./components/MetroGlobal/Layout"
+// import Loader from "./components/MetroGlobal/Loader";
 
 // Lazy-loaded components
 const HeroSection = lazy(() => import("./Routes/HeroSection"));
@@ -12,25 +13,37 @@ const Services = lazy(() => import("./Routes/services"));
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HeroSection />,
+    element: 
+    <Layout>
+      <HeroSection />,
+    </Layout>
   },
   {
     path: "/about",
-    element: <AboutUs />,
+    element: 
+    <Layout>
+      <AboutUs />,
+    </Layout>
   },
   {
     path: "/projects",
-    element: <Projects />,
+    element: 
+    <Layout>
+      <Projects />,
+    </Layout>
   },
   {
     path: "/services",
-    element: <Services />,
+    element: 
+    <Layout>
+      <Services />,
+    </Layout>  
   },
 ]);
 
 function App() {
   return (
-    <Suspense fallback={<Loader />}>
+    <Suspense>
       <RouterProvider router={router} />
     </Suspense>
   );
