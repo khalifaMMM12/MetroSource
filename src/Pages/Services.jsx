@@ -80,7 +80,9 @@ const Services = () => {
           color={"#121212"}
           textAlign={"center"}
           fontSize={{ smDown: 25, smToMd: 30, mdTo2xl: 45 }}
-          fontWeight={"medium"}>
+          fontWeight={"medium"}
+          // className="text-xl font-bold"
+          >
           Our Services
         </Text>
         <Text
