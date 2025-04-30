@@ -59,7 +59,7 @@ const Services = () => {
       animationDuration='slowest'
       animationStyle={{ _open: "slide-fade-in", _closed: "slide-fade-out" }}
       w={"100%"}
-      height={"full"}
+      height={"full"} 
       flexDirection={"column"}
       alignItems={"center"}>
       <Flex
