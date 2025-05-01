@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 @import "tailwindcss";
 
-
-
 * {
   margin: 0;
   padding: 0;
@@ -14,42 +12,26 @@
 .embla {
   overflow: hidden;
   width: 100%;
+  height: 80vh;
+}
+
+.embla__viewport {
+  width: 100%;
+  height: 100%;
 }
 
 .embla__container {
   display: flex;
-  align-items: center;
-  will-change: transform;
-  backface-visibility: hidden;
+  height: 100%;
 }
 
 .embla__slide {
-  position: relative;
-  flex: 0 0 70%;
-  margin: 0 1rem;
+  flex: 0 0 100%;
   min-width: 0;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 0.4;
-  transform: scale(0.8);
+  height: 100%;
+  position: relative;
 }
 
-.embla__slide.is-selected {
-  opacity: 1;
-  transform: scale(1.1);
-  z-index: 2;
-}
-
-.embla__slide.is-selected + .embla__slide,
-.embla__slide.is-selected ~ .embla__slide {
-  transform: scale(0.8);
-  opacity: 0.4;
-  z-index: 1;
-}
-
-.embla__viewport {
-  overflow: hidden;
-  perspective: 1000px;
-}
 
 .hover-BTN {
   opacity: 0;

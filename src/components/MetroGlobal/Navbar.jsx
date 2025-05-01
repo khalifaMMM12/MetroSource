@@ -136,14 +136,13 @@ const Navbar = () => {
             position: "fixed",
             top: "70px",
             right: 0,
-            background: "#e0e0e0",
+            background: "#f8f8f8",
             width: "100%",
             padding: "2rem",
             display: "flex",
             flexDirection: "column",
             gap: "1.5rem",
             zIndex: 20,
-            boxShadow: "0px 4px 10px rgba(0,0,0,0.15)",
           }}
         >
           {menu.map((menuItem) => (

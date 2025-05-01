@@ -2,8 +2,8 @@
 /* eslint-disable react/prop-types */
 import { Button } from "@chakra-ui/react";
 import { useCallback, useEffect, useState } from "react";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-
+import { IconButton } from "@chakra-ui/react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 export const usePrevNextButtons = (emblaApi) => {
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
@@ -38,37 +38,34 @@ export const usePrevNextButtons = (emblaApi) => {
   };
 };
 
-export const PrevButton = (props) => {
-  const { children, ...restProps } = props;
+export const PrevButton = ({ onClick, disabled }) => (
+  <IconButton
+    aria-label="Previous slide"
+    icon={<FaChevronLeft />}
+    onClick={onClick}
+    isDisabled={disabled}
+    variant="solid"
+    colorScheme="whiteAlpha"
+    size="sm"
+    bg="white"
+    color="gray.800"
+    _hover={{ bg: "gray.200" }}
+    _disabled={{ opacity: 0.4, cursor: "not-allowed" }}
+  />
+);
 
-  return (
-    <Button
-      rounded={"full"}
-      bg={"#EF7826"}
-      color={"#ffffff"}
-      className='embla__button embla__button--prev'
-      type='button'
-      {...restProps}>
-      <FaArrowLeft size={14} color='#ffffff' />
-      {children}
-    </Button>
-  );
-};
-
-export const NextButton = (props) => {
-  const { children, ...restProps } = props;
-
-  return (
-    <Button
-      rounded={"full"}
-      bg={"#EF7826"}
-      color={"#ffffff"}
-      className='embla__button embla__button--next'
-      type='button'
-      {...restProps}>
-      <FaArrowRight size={14} color='#ffffff' />
-
-      {children}
-    </Button>
-  );
-};
+export const NextButton = ({ onClick, disabled }) => (
+  <IconButton
+    aria-label="Next slide"
+    icon={<FaChevronRight />}
+    onClick={onClick}
+    isDisabled={disabled}
+    variant="solid"
+    colorScheme="whiteAlpha"
+    size="sm"
+    bg="white"
+    color="gray.800"
+    _hover={{ bg: "gray.200" }}
+    _disabled={{ opacity: 0.4, cursor: "not-allowed" }}
+  />
+);

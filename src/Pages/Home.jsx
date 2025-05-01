@@ -1,123 +1,132 @@
-import { Box, Button, Flex, Image } from "@chakra-ui/react";
+import { Box, Button, Flex, Image, HStack } from "@chakra-ui/react";
 import metroHome from "@/assets/metroHome.jpg";
 import metroHome3 from "@/assets/slide3.jpeg";
 import mad1 from "@/assets/mad1.jpg";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useCallback, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
 const Home = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  const autoplay = Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true });
-
+  const autoplayPlugin = useCallback(
+    Autoplay({ 
+      delay: 5000,
+      stopOnMouseEnter: true,
+      stopOnInteraction: false
+    }), 
+    []
+  );
+  
   const [emblaRef, emblaApi] = useEmblaCarousel(
-    {
+    { 
       loop: true,
-      align: "center",
       skipSnaps: false,
-      containScroll: "trimSnaps",
-      dragFree: true,
-      startIndex: 0,
-      slidesToScroll: 1,
-    },
-    [autoplay]
+      dragFree: false
+    }, 
+    [autoplayPlugin]
   );
 
-  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelectedIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
 
   useEffect(() => {
     if (!emblaApi) return;
-
-    const onSelect = () => {
-      setSelectedIndex(emblaApi.selectedScrollSnap());
-    };
-
+    
     emblaApi.on("select", onSelect);
-    onSelect();
-  }, [emblaApi]);
-
+    
+    return () => {
+      emblaApi.off("select", onSelect);
+    };
+  }, [emblaApi, onSelect]);
+  
   const images = [metroHome, mad1, metroHome3];
-
   return (
     <Flex
-      flexDir="column"
-      w="full"
-      maxW="1200px"
-      mx="auto"
+      flex={1}
       position="relative"
-      overflow="hidden"
+      flexDirection="column"
+      w="full"
+      maxH="100vh"
+      p={{ base: 2, md: 4 }}
+      bg="#fafafa"
     >
-      <Box ref={emblaRef} className="embla__viewport" overflow="hidden" w="full">
-        <Flex className="embla__container">
-          {images.map((img, index) => (
-            <Box
-              key={index}
-              className={`embla__slide ${selectedIndex === index ? "is-selected" : ""}`}
-            >
-              <Image
-                src={img}
-                alt={`Slide ${index}`}
-                objectFit="cover"
-                rounded="xl"
-                w="full"
-                h={{ base: "60vh", md: "500px" }}
-                sx={{
-                  transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-                  filter: selectedIndex === index ? 'brightness(1)' : 'brightness(0.7)',
-                }}
-              />
-            </Box>
-          ))}
-        </Flex>
+      <Box className="embla" rounded="2xl" overflow="hidden" bg="#fafafa">
+        <Box className="embla__viewport" ref={emblaRef}>
+          <Flex className="embla__container">
+            {images.map((src, index) => (
+              <Box key={index} className="embla__slide">
+                <Image
+                  src={src}
+                  loading="lazy"
+                  fit="cover"
+                  w="full"
+                  h="100%"
+                  objectFit="cover"
+                />
+              </Box>
+            ))}
+          </Flex>
+        </Box>
       </Box>
 
-      {/* Pagination Dots */}
-      <Flex justify="center" mt={3} gap={2}>
+      <Box
+        onClick={scrollPrev}
+        position="absolute"
+        top="50%"
+        left={4}
+        transform="translateY(-50%)"
+        zIndex={10}
+        cursor="pointer"
+        _hover={{ opacity: 0.8 }}
+      >
+        <FaAngleLeft color="#fafafa" size={45} />
+      </Box>
+
+      <Box
+        onClick={scrollNext}
+        position="absolute"
+        top="50%"
+        right={4}
+        transform="translateY(-50%)"
+        zIndex={10}
+        cursor="pointer"
+        _hover={{ opacity: 0.8 }}
+      >
+        <FaAngleRight color="#fafafa" size={45}/>
+      </Box>
+
+      <HStack
+        spacing={3}
+        position="absolute"
+        bottom={6}
+        left="50%"
+        transform="translateX(-50%)"
+        zIndex={10}
+      >
         {images.map((_, index) => (
           <Box
             key={index}
-            w="10px"
-            h="10px"
-            bg={selectedIndex === index ? "blue.500" : "gray.300"}
+            w={3}
+            h={3}
             rounded="full"
+            bg={selectedIndex === index ? "#EF7826" : "#fafafa"}
             transition="all 0.3s"
           />
         ))}
-      </Flex>
-
-      {/* Left Button */}
-      <Button
-        position="absolute"
-        top="50%"
-        left="2"
-        transform="translateY(-50%)"
-        bg="rgba(0,0,0,0.5)"
-        _hover={{ bg: "rgba(0,0,0,0.7)" }}
-        rounded="full"
-        zIndex={1}
-        onClick={scrollPrev}
-      >
-        <FaArrowLeft color="white" />
-      </Button>
-
-      {/* Right Button */}
-      <Button
-        position="absolute"
-        top="50%"
-        right="2"
-        transform="translateY(-50%)"
-        bg="rgba(0,0,0,0.5)"
-        _hover={{ bg: "rgba(0,0,0,0.7)" }}
-        rounded="full"
-        zIndex={1}
-        onClick={scrollNext}
-      >
-        <FaArrowRight color="white" />
-      </Button>
+      </HStack>
     </Flex>
   );
 };

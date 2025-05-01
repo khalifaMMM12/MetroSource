@@ -5,7 +5,7 @@ const Layout = ({ children }) => {
   return (
     <Box>
       <Navbar />
-      <Box as="main" pt="110px">
+      <Box as="main" pt="100px">
         {children}
       </Box>
     </Box>
