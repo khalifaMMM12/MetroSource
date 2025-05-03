@@ -44,13 +44,13 @@ export const PrevButton = ({ onClick, disabled }) => (
     icon={<FaChevronLeft />}
     onClick={onClick}
     isDisabled={disabled}
-    variant="solid"
-    colorScheme="whiteAlpha"
     size="sm"
-    bg="white"
-    color="gray.800"
-    _hover={{ bg: "gray.200" }}
-    _disabled={{ opacity: 0.4, cursor: "not-allowed" }}
+    bg="#EF7826"
+    color="white"
+    borderRadius="full"
+    boxShadow="md"
+    _hover={{ bg: "#d7671e" }}
+    _disabled={{ opacity: 0.5, cursor: "not-allowed" }}
   />
 );
 
@@ -60,12 +60,12 @@ export const NextButton = ({ onClick, disabled }) => (
     icon={<FaChevronRight />}
     onClick={onClick}
     isDisabled={disabled}
-    variant="solid"
-    colorScheme="whiteAlpha"
     size="sm"
-    bg="white"
-    color="gray.800"
-    _hover={{ bg: "gray.200" }}
-    _disabled={{ opacity: 0.4, cursor: "not-allowed" }}
+    bg="#EF7826"
+    color="white"
+    borderRadius="full"
+    boxShadow="md"
+    _hover={{ bg: "#d7671e" }}
+    _disabled={{ opacity: 0.5, cursor: "not-allowed" }}
   />
 );

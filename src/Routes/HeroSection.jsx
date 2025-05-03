@@ -1,7 +1,8 @@
 import Footer from "@/components/MetroGlobal/Footer";
 import Navbar from "@/components/MetroGlobal/Navbar";
 import ClientPage from "@/Pages/clientsPage";
-import CoreValues from "@/Pages/CoreValue";
+// import CoreValues from "@/components/M/CoreValues";
+import CoreValues from "@/components/MetroGlobal/CoreValues";
 import Home from "@/Pages/Home";
 import Mission from "@/Pages/Mission";
 import RecentProjects from "@/Pages/RecentProjects";
