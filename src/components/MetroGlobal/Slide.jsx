@@ -6,43 +6,14 @@ import { FaArrowRight } from "react-icons/fa";
 import pic1 from "@/assets/pic2.png";
 import "../../App.css";
 
-const EmblaCarousel = ({ slides, options }) => {
+const EmblaCarousel = ({ slides, options, setEmbla }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(options);
 
-  const usePrevNextButtons = (emblaApi) => {
-    const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
-    const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
-
-    const onPrevButtonClick = useCallback(() => {
-      if (!emblaApi) return;
-      emblaApi.scrollPrev();
-    }, [emblaApi]);
-
-    const onNextButtonClick = useCallback(() => {
-      if (!emblaApi) return;
-      emblaApi.scrollNext();
-    }, [emblaApi]);
-
-    const onSelect = useCallback((emblaApi) => {
-      setPrevBtnDisabled(!emblaApi.canScrollPrev());
-      setNextBtnDisabled(!emblaApi.canScrollNext());
-    }, []);
-
+  
     useEffect(() => {
-      if (!emblaApi) return;
-      onSelect(emblaApi);
-      emblaApi.on("reInit", onSelect).on("select", onSelect);
-    }, [emblaApi, onSelect]);
+      if (emblaApi) setEmbla(emblaApi);
+    }, [emblaApi, setEmbla]);
 
-    return { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick };
-  };
-
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-  } = usePrevNextButtons(emblaApi);
 
   return (
     <Box w="100%" overflow="hidden" position="relative" className="embla2">
@@ -64,12 +35,12 @@ const EmblaCarousel = ({ slides, options }) => {
             >
               {/* Top text */}
               <Flex direction="column" gap={4}>
-                <Text color="whiteAlpha.900" fontSize={["sm", "sm", "md"]} lineHeight="1.6">
+                <Text color="whiteAlpha.900" fontSize={{ base: "lg", md: "xl" }} lineHeight="1.6">
                   “Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
                   incididunt ut labore et dolore magna aliqua.”
                 </Text>
                 <Flex align="center" gap={2} cursor="pointer">
-                  <Text color="orange.400" fontWeight="medium" fontSize="sm">
+                  <Text color="orange.400" fontWeight="medium" fontSize="lg">
                     View Project
                   </Text>
                   <FaArrowRight color="#EF7826" size={12} />
@@ -83,7 +54,7 @@ const EmblaCarousel = ({ slides, options }) => {
                   <Text color="white" fontWeight="semibold" fontSize="md">
                     John Femi
                   </Text>
-                  <Text color="whiteAlpha.600" fontSize="sm">
+                  <Text color="whiteAlpha.600" fontSize="lg">
                     Director, Jabi Hospital
                   </Text>
                 </Flex>
@@ -93,18 +64,6 @@ const EmblaCarousel = ({ slides, options }) => {
         </Flex>
       </Box>
 
-      <Flex
-        position="absolute"
-        top={0}
-        right={0}
-        p={3}
-        zIndex={10}
-        gap={2}
-        justifyContent="flex-end"
-      >
-        <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-        <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
-      </Flex>
     </Box>
   );
 };

@@ -114,7 +114,7 @@ const Services = () => {
         Our Services
       </Text>
       <Text
-        fontSize={{ base: "sm", md: "md" }}
+        fontSize={{ base: "lg", md: "xl" }}
         textAlign="center"
         maxW="3xl"
         mx="auto"
@@ -233,10 +233,10 @@ const Services = () => {
 
             <Box p={4}>
               <Box mb={2}>{item.icon}</Box>
-              <Text fontSize="lg" fontWeight="semibold" mb={2}>
+              <Text fontSize="xl" fontWeight="semibold" mb={2}>
                 {item.title}
               </Text>
-              <Text fontSize="sm" color="gray.600">
+              <Text fontSize="lg" color="gray.600">
                 {item.subTitle}
               </Text>
             </Box>

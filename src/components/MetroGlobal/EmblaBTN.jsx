@@ -2,8 +2,8 @@
 /* eslint-disable react/prop-types */
 import { Button } from "@chakra-ui/react";
 import { useCallback, useEffect, useState } from "react";
-import { IconButton } from "@chakra-ui/react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+
 export const usePrevNextButtons = (emblaApi) => {
   const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
   const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
@@ -39,33 +39,33 @@ export const usePrevNextButtons = (emblaApi) => {
 };
 
 export const PrevButton = ({ onClick, disabled }) => (
-  <IconButton
+  <Button
     aria-label="Previous slide"
-    icon={<FaChevronLeft />}
     onClick={onClick}
     isDisabled={disabled}
-    size="sm"
+    size="xl"
     bg="#EF7826"
-    color="white"
     borderRadius="full"
     boxShadow="md"
     _hover={{ bg: "#d7671e" }}
     _disabled={{ opacity: 0.5, cursor: "not-allowed" }}
-  />
+  >
+    <FaArrowLeft size={14} color='#ffffff' />
+  </Button>
 );
 
 export const NextButton = ({ onClick, disabled }) => (
-  <IconButton
+  <Button
     aria-label="Next slide"
-    icon={<FaChevronRight />}
     onClick={onClick}
     isDisabled={disabled}
-    size="sm"
+    size="xl"
     bg="#EF7826"
-    color="white"
     borderRadius="full"
     boxShadow="md"
     _hover={{ bg: "#d7671e" }}
     _disabled={{ opacity: 0.5, cursor: "not-allowed" }}
-  />
+  >
+    <FaArrowRight size={14} color='#ffffff' />
+  </Button>
 );
