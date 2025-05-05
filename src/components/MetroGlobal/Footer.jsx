@@ -51,7 +51,7 @@ const Footer = () => {
       </Flex>
       <SimpleGrid columns={[1, 1, 3, 3, 3]} gap={10} p={4}>
         <Flex flexDirection={"column"} gap={4}>
-          <Text color='#ef7826' fontSize={16}>
+          <Text color='#ef7826' fontSize={18}>
             Menu
           </Text>
           <List.Root listStyle={"none"} gap={2}>
@@ -63,14 +63,14 @@ const Footer = () => {
                 cursor={"pointer"}
                 fontWeight={"normal"}
                 _hover={{ color: "#ef7826" }}
-                fontSize={14}>
+                fontSize={16}>
                 <NavLink to={menuItem.hrefLink}>{menuItem.name}</NavLink>
               </List.Item>
             ))}
           </List.Root>
         </Flex>
         <Flex flexDirection={"column"} gap={4}>
-          <Text color='#ef7826' fontSize={16}>
+          <Text color='#ef7826' fontSize={18}>
             Get in Touch
           </Text>
           <List.Root listStyle={"none"} gap={2}>
@@ -82,20 +82,20 @@ const Footer = () => {
                 cursor={"pointer"}
                 fontWeight={"normal"}
                 _hover={{ color: "#ef7826" }}
-                fontSize={14}>
+                fontSize={16}>
                 {item.title}
               </List.Item>
             ))}
           </List.Root>
         </Flex>
         <Flex flexDirection={"column"} gap={4}>
-          <Text color='#ef7826' fontSize={16}>
+          <Text color='#ef7826' fontSize={18}>
             Socials
           </Text>
           <Flex w={"100%"} gap={3} alignItems={"center"}>
-            <FaFacebook size={20} color='#f4f4f4' />
-            <FaInstagram size={20} color='#f4f4f4' />
-            <FaLinkedinIn size={20} color='#f4f4f4' />
+            <FaFacebook size={23} color='#f4f4f4' />
+            <FaInstagram size={23} color='#f4f4f4' />
+            <FaLinkedinIn size={23} color='#f4f4f4' />
           </Flex>
         </Flex>
       </SimpleGrid>
@@ -108,7 +108,7 @@ const Footer = () => {
         alignItems={"center"}
         bg={"#F1EFE7"}
         p={4}>
-        <Text color={"#121212"} fontSize={16}>
+        <Text color={"#121212"} fontSize={18}>
           © Copyright MetroSource. All Rights Reserved
         </Text>
       </Flex>

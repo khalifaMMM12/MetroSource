@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import Layout from "./components/MetroGlobal/Layout"
+import "./index.css";
 // import Loader from "./components/MetroGlobal/Loader";
 
 // Lazy-loaded components
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
     path: "/",
     element: 
     <Layout>
-      <HeroSection />,
+      <HeroSection />
     </Layout>
   },
   {

@@ -15,7 +15,6 @@
 .embla__slide2 {
   transform: translate3d(0, 0, 0);
   flex: 0 0 auto;
-
   height: fit-content;
   border-radius: 12px;
   margin-right: 10px;

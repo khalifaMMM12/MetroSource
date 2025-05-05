@@ -37,7 +37,6 @@ const Navbar = () => {
       zIndex={1000}
       className="text-lg"
     >
-      {/* Left Side: Logo + Name */}
       <Flex flex="1" alignItems="center">
         <Link to="/" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
           <Image src={Logo} h={{ base: "30px", md: "40px" }} />
@@ -92,7 +91,6 @@ const Navbar = () => {
         ))}
       </Flex>
 
-      {/* Right Side: Get in Touch button + Mobile Icon */}
       <Flex flex="1" justifyContent="flex-end" alignItems="center" gap={4}>
         <Button
           bg="#EF7826"
@@ -107,7 +105,6 @@ const Navbar = () => {
           Get in Touch
         </Button>
 
-        {/* Mobile Menu Toggle */}
         {isMobile && (
           <Button
             onClick={toggleActive}
@@ -122,7 +119,6 @@ const Navbar = () => {
         )}
       </Flex>
 
-      {/* Mobile Menu Sliding Dropdown */}
       {isMobile && (
         <motion.div
           initial={false}
@@ -163,15 +159,7 @@ const Navbar = () => {
               {({ isActive }) => (
                 <>
                   {menuItem.name}
-                  <motion.div
-                    layoutId="underline"
-                    style={{
-                      height: "2px",
-                      backgroundColor: isActive ? "#EF7826" : "#bbb",
-                      borderRadius: "2px",
-                      marginTop: "4px",
-                    }}
-                  />
+                  
                 </>
               )}
             </NavLink>

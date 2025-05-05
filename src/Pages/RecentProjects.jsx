@@ -22,11 +22,11 @@ const images = [
 const RecentProjects = () => {
   return (
     <Flex
-      w="100%"
+      w="full"
       flexDirection="column"
       align="center"
       py={10}
-      px={{ base: 4, md: 8, xl: 20 }}
+      px={{ base: 6, md: 8, xl: 10 }}
       bg="#f8f8f8"
     >
       <Text

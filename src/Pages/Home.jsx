@@ -2,7 +2,6 @@ import { Box, Button, Flex, Image, HStack } from "@chakra-ui/react";
 import metroHome from "@/assets/metroHome.jpg";
 import metroHome3 from "@/assets/slide3.jpeg";
 import mad1 from "@/assets/mad1.jpg";
-
 import { useEffect, useCallback, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
@@ -12,11 +11,11 @@ const Home = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const autoplayPlugin = useCallback(
-    Autoplay({ 
+    () => Autoplay({
       delay: 5000,
-      stopOnMouseEnter: true,
-      stopOnInteraction: false
-    }), 
+      stopOnInteraction: false,
+      stopOnMouseEnter: true
+    }),
     []
   );
   
@@ -26,7 +25,7 @@ const Home = () => {
       skipSnaps: false,
       dragFree: false
     }, 
-    [autoplayPlugin]
+    [autoplayPlugin()]
   );
 
   const scrollPrev = useCallback(() => {
@@ -44,7 +43,7 @@ const Home = () => {
 
   useEffect(() => {
     if (!emblaApi) return;
-    
+
     emblaApi.on("select", onSelect);
     
     return () => {
@@ -63,11 +62,17 @@ const Home = () => {
       p={{ base: 2, md: 4 }}
       bg="#fafafa"
     >
-      <Box className="embla" rounded="2xl" overflow="hidden" bg="#fafafa">
-        <Box className="embla__viewport" ref={emblaRef}>
+      <Box 
+        className="embla" 
+        rounded="2xl" 
+        overflow="hidden" 
+        bg="#fafafa"
+        h={{ base: "300px", md: "400px", lg: "500px" }}
+      >        
+      <Box className="embla__viewport" ref={emblaRef}>
           <Flex className="embla__container">
             {images.map((src, index) => (
-              <Box key={index} className="embla__slide">
+              <Box key={index} className="embla__slide" flex="0 0 100%" minW="0">
                 <Image
                   src={src}
                   loading="lazy"
@@ -75,6 +80,7 @@ const Home = () => {
                   w="full"
                   h="100%"
                   objectFit="cover"
+                  alt={`Slide ${index + 1}`}
                 />
               </Box>
             ))}
@@ -124,6 +130,8 @@ const Home = () => {
             rounded="full"
             bg={selectedIndex === index ? "#EF7826" : "#fafafa"}
             transition="all 0.3s"
+            cursor="pointer"
+            onClick={() => emblaApi?.scrollTo(index)}
           />
         ))}
       </HStack>
